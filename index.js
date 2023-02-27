@@ -35,5 +35,26 @@ generateEl.addEventListener("click", function(){
     
 })
 
+firstEl.addEventListener("click", function() {
+    if(firstEl.textContent !== "Generate" ){
+    copyToClipboard(firstEl.textContent);
+    firstEl.textContent = "Password copied to the clipboard";
+}
+});
+
+  secondEl.addEventListener("click", function() {
+    if(secondEl.textContent !== "Generate"){
+    copyToClipboard(secondEl.textContent);
+    secondEl.textContent = "Password copied to the clipboard";
+  }});
+
+  function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(function() {
+      console.log('Text copied to clipboard');
+    }, function(err) {
+      console.error('Could not copy text: ', err);
+    });
+  }
+
 
 
